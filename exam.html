@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<htm>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="front end ">
+        <title> Automated exam correction system</title>
+        <link rel="stylesheet" href="css/style3.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" type="img/jpng" href="img/hi.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="text">
+                <p> This site aimed at designing an electronic correction system to
+                    correct students exams. The exams can be pictures, pdf or office files
+                    that contain texts, <br>The exam will be corrected and graded by being compared to a given typical
+                    answer
+                    (model answer). <br>
+                    The system shows and corrects students' errors as well as determining the student level. The system
+                    also gives the pass and fail percentages and other details needed for the evaluation process.
+                </p>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="index.html" id="about">Home Page</a>
+                <a href="#model" id="blog">Model Answer</a>
+                <a href="#" id="projects">Marks List</a>
+
+            </div>
+        </div>
+        <div id="container" class="question">
+           
+            <div class="ques"> 
+                <form>
+                    <label for="number">Number of questions:</label>
+                    <input type="text" class="num"  name="number" size="3"><br><br>
+                
+                   
+                    <label for="students">Number of students:</label>
+                    <input type="text" class="num1" name="students" size="3"><br><br>    
+                    <label  for="mark"  > Total mark:</label>
+                       
+                    <input type="text" class="mark" name="mark" size="3"><br><br>  
+                   
+                  
+                    <button class="add"> Save</button> <br><br>
+                </form>
+            </div>
+            <div class="model" id="mod">
+             <a name="model"></a>   <h2> Enter model answer:</h2>
+                <div class="a">
+                    <p id="my_p" class="effect"> Quesion number 1</p>
+                    <label class="form-label" for="customFile">Upload the Answer:</label> <br> 
+                    <input type="file" class="form-control" id="customFile" />
+                </div>
+
+            
+            <button class="add" id="btn1"> Add new question</button>
+        </div>
+<div class="student" id="stu"> 
+    <h2> Enter student answer:</h2>
+    <div class="a">
+        <p id="my" class="effect"> Quesion number 1</p>
+        <label class="form-label" for="customFile">Upload the Answer:</label> <br> 
+        <input type="file" class="form-control" id="custom" />
+    </div>
+    <button class="add" id="btn2"> Add new question</button>
+</div>
+
+        </div>
+    </body>
+    <script>
+        var i = 1;
+        var quastion_name = "q" + i;
+
+        $("#btn1").click(function () {
+            i++;
+           // document.getElementById("my_p").innerHTML = "Quesion number" + i;
+
+            $("#mod").append(`<div class="a"> <p class="effect"> Quesion number ${i}</p><label class="form-label" for="customFile">Upload the Answer:</label> <br> <input type="file" class="form-control" id="customFile" /> </div>`);
+        });
+        var j=1 ;
+        var quastion_nam = "q" + i;
+        $("#btn2").click(function () {
+            j++;
+            $("#stu").append(`
+    <div class="a">
+        <p class="effect"> Quesion number ${j}</p>
+        <label class="form-label" for="customFile">Upload the Answer:</label> <br> 
+        <input type="file" class="form-control" id="custom" />
+    </div>`);
+});
+
+    </script>
+</htm>
